@@ -27,6 +27,6 @@ public class SessionController {
 		model.addAttribute("class" , "alert-info");
 		model.addAttribute("message" , "ログアウトしました");
 		
-		return "layouts/comp;ete";
+		return "layouts/complete";
 	}
 }
