@@ -1,0 +1,51 @@
+package com.example.pictgram.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+/**
+ * セッション関連コントローラー.
+ * @author matsumotoyuyya
+ *
+ */
+@Controller
+public class SessionsController {
+
+    /**
+     * ログイン画面に遷移します.
+     * @return ログイン画面
+     */
+    @GetMapping(path = "/login")
+    public String index() {
+        return "sessions/new";
+    }
+
+    /**
+     * ログイン失敗のメッセージを表示します.
+     * @param model モデル
+     * @return ログイン画面
+     */
+    @GetMapping(path = "/login-failure")
+    public String loginFailure(Model model) {
+        model.addAttribute("hasMessage", true);
+        model.addAttribute("class", "alert-danger");
+        model.addAttribute("message", "Emailまたはパスワードに誤りがあります。");
+
+        return "sessions/new";
+    }
+
+    /**
+     * ログアウト完了画面のメッセージを表示します.
+     * @param model モデル
+     * @return　ログイン完了画面
+     */
+    @GetMapping(path = "/logout-complete")
+    public String logoutComplete(Model model) {
+        model.addAttribute("hasMessage", true);
+        model.addAttribute("class", "alert-info");
+        model.addAttribute("message", "ログアウトしました。");
+
+        return "layouts/complete";
+    }
+}
