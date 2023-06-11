@@ -24,6 +24,13 @@ public class GlobalControllerAdvice {
 
     protected static Logger log = LoggerFactory.getLogger(GlobalControllerAdvice.class);
 
+    /**
+     * フラッシュメッセージを出力します.
+     * @param e 例外
+     * @param model　モデル
+     * @param locale　ロケール
+     * @return 完了画面
+     */
     @ExceptionHandler(Exception.class)
     public String exceptionHandler(Exception e, Model model, Locale locale) {
 
