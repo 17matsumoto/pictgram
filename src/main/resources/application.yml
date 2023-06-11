@@ -9,5 +9,23 @@ spring:
     multipart:
      max-file-size: 300MB
      max-request-size: 300MB
+  mail:
+    default-encoding: UTF-8
+    protocol: smtp
+    host: ${smtp.gmail.com}
+    port: ${587}
+    username: ${17yuya.baseball@gmail.com}
+    password: ${Yuya1221}
+    properties: 
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  thymeleaf:
+    check-template-location: false
+     
 image:
   local: true
+  
